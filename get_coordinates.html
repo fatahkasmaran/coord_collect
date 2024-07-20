@@ -14,6 +14,8 @@
         function showPosition(position) {
             const latitude = position.coords.latitude;
             const longitude = position.coords.longitude;
+
+            // Google Form link with only latitude and longitude pre-filled
             const formLink = `https://docs.google.com/forms/d/e/1FAIpQLSephqob10SLB0gl0ksJwYkwkinuECpISN_8hJWanrYnevvP0g/viewform?usp=pp_url&entry.2070352084=${latitude}&entry.266997233=${longitude}`;
             window.location.href = formLink;
         }

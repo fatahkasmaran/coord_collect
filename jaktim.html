@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get Coordinates</title>
+    <script>
+        function getCoordinates() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+
+        function showPosition(position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+            const coordinates = `${latitude},${longitude}`;
+
+            // Google Form link with combined coordinates pre-filled
+            const formLink = `https://docs.google.com/forms/d/e/1FAIpQLSfl4Rj6Q5N5HGma84lHi7i4AcgyCc4LFFVrI_cXwCz4wtXS6A/viewform?usp=pp_url&entry.2039554615=${coordinates}`;
+            window.location.href = formLink;
+        }
+    </script>
+</head>
+<body onload="getCoordinates()">
+    <h1>Redirecting...</h1>
+</body>
+</html>
